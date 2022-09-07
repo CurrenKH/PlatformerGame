@@ -116,7 +116,7 @@ public class TestMove : MonoBehaviour
             maxSpeed = 4;
         }
 
-        if (allowRunning == true && Input.GetKey(KeyCode.RightShift) && stamina > 0)
+        if (allowRunning == true && Input.GetAxisRaw("Fire2") > 0 && stamina > 0)
         {
             playerIsRunning = true;
             stamina -= staminaDepleteRate;
@@ -125,7 +125,7 @@ public class TestMove : MonoBehaviour
         {
             playerIsRunning = false;
         }
-        if (stamina < 100 && !Input.GetKey(KeyCode.RightShift))
+        if (stamina < 100 && Input.GetAxisRaw("Fire2") <= 0)
         {
             stamina += staminaRechargeRate;
         }
